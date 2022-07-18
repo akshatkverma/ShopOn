@@ -1,10 +1,12 @@
 package hackon.lifetime.shopon.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import hackon.lifetime.shopon.R
 import hackon.lifetime.shopon.databinding.FragmentDetailBinding
@@ -28,13 +30,13 @@ class DetailFragment : Fragment() {
         var product: Product? = null
 
 
-        arguments?.let{
+        arguments?.let {
             val args = DetailFragmentArgs.fromBundle(it)
-            product = products.find {args.id == it.id }
+            product = products.find { args.id == it.id }
         }
 
-        product?.let{
-            with(it){
+        product?.let {
+            with(it) {
                 binding.include.productName.text = name
                 binding.include.productPrice.text = getString(R.string.product_price, price)
                 binding.include.productDescription.text = shortDescription
@@ -42,7 +44,19 @@ class DetailFragment : Fragment() {
                 binding.include.productImage.setImageResource(imageId)
 
                 binding.buy.setOnClickListener {
-                    findNavController().navigate(DetailFragmentDirections.actionDetailToCheckout(this.id))
+                    findNavController().navigate(
+                        DetailFragmentDirections.actionDetailToCheckout(
+                            this.id
+                        )
+                    )
+                }
+
+                binding.virtual.setOnClickListener {
+                    val sceneViewerIntent = Intent(Intent.ACTION_VIEW)
+                    sceneViewerIntent.data =
+                        Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Avocado/glTF/Avocado.gltf")
+                    sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox")
+                    startActivity(sceneViewerIntent)
                 }
             }
         }

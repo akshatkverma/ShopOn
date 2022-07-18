@@ -1,10 +1,10 @@
 package hackon.lifetime.shopon.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import hackon.lifetime.shopon.R
 import hackon.lifetime.shopon.databinding.FragmentThanksBinding
@@ -25,14 +25,14 @@ class ThanksFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var product: Product? = null
-        arguments?.let{
+        arguments?.let {
             val args = CheckoutFragmentArgs.fromBundle(it)
-            product = products.find {args.id == it.id }
+            product = products.find { args.id == it.id }
         }
 
-        product?.let{
+        product?.let {
 
-            with(it){
+            with(it) {
                 binding.thanks.text = getString(R.string.thank_you_message, this.name)
                 binding.continueShopping.setOnClickListener {
                     findNavController().navigate(R.id.action_thanks_to_home)

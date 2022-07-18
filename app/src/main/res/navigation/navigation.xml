@@ -8,16 +8,16 @@
         android:id="@+id/home"
         android:name="hackon.lifetime.shopon.fragments.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" >
+        tools:layout="@layout/fragment_list">
         <action
             android:id="@+id/action_home_to_detail"
-            app:destination="@id/detail"/>
+            app:destination="@id/detail" />
     </fragment>
     <fragment
         android:id="@+id/detail"
         android:name="hackon.lifetime.shopon.fragments.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
+        tools:layout="@layout/fragment_detail">
         <action
             android:id="@+id/action_detail_to_checkout"
             app:destination="@id/checkout" />
@@ -29,7 +29,7 @@
         android:id="@+id/checkout"
         android:name="hackon.lifetime.shopon.fragments.CheckoutFragment"
         android:label="fragment_checkout"
-        tools:layout="@layout/fragment_checkout" >
+        tools:layout="@layout/fragment_checkout">
         <action
             android:id="@+id/action_checkout_to_thanks"
             app:destination="@id/thanks"
@@ -43,7 +43,7 @@
         android:id="@+id/thanks"
         android:name="hackon.lifetime.shopon.fragments.ThanksFragment"
         android:label="fragment_thanks"
-        tools:layout="@layout/fragment_thanks" >
+        tools:layout="@layout/fragment_thanks">
         <action
             android:id="@+id/action_thanks_to_home"
             app:destination="@+id/home"
