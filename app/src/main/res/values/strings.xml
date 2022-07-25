@@ -7,9 +7,12 @@
     <string name="buy_product">Buy Product</string>
     <string name="checkout">Checkout</string>
     <string name="shopping_cart">Shopping Cart</string>
-    <string name="thank_you">Thank You</string>
-    <string name="thank_you_message">Thank you for purchasing %1$s. You will soon get an email confirming the order. Your product will be shipped within 4-5 days</string>
-    <string name="continue_shopping">Continue Shopping</string>
-    <string name="order_total">Order Total: Rs %1$.2f</string>
+    <string name="rupee">₹</string>
+    <string name="try_in_your_home">Try In Your Home</string>
+    <string name="product_details">Product Details</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="in_stock">In stock.</string>
+    <string name="_00">00</string>
 
 </resources>

@@ -30,26 +30,17 @@ class DetailFragment : Fragment() {
         var product: Product? = null
 
 
-        arguments?.let {
+        arguments?.let { it ->
             val args = DetailFragmentArgs.fromBundle(it)
             product = products.find { args.id == it.id }
         }
 
         product?.let {
             with(it) {
-                binding.include.productName.text = name
-                binding.include.productPrice.text = getString(R.string.product_price, price)
-                binding.include.productDescription.text = shortDescription
-                binding.include.productDescription.text = longDescription
-                binding.include.productImage.setImageResource(imageId)
-
-                binding.buy.setOnClickListener {
-                    findNavController().navigate(
-                        DetailFragmentDirections.actionDetailToCheckout(
-                            this.id
-                        )
-                    )
-                }
+                binding.productName.text = name
+                binding.productPrice.text = price
+                binding.productFullDescription.text = longDescription
+                binding.productImage.setImageResource(imageId)
 
                 binding.virtual.setOnClickListener {
                     val sceneViewerIntent = Intent(Intent.ACTION_VIEW)

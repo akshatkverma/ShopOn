@@ -28,7 +28,7 @@ class ProductAdapter(private val listener: (Product) -> Unit) :
         holder.bind(getItem(position))
     }
 
-    inner class ViewHolder(val containerView: View) :
+    inner class ViewHolder(containerView: View) :
         RecyclerView.ViewHolder(containerView) {
 
         init {
@@ -37,17 +37,23 @@ class ProductAdapter(private val listener: (Product) -> Unit) :
             }
         }
 
-        val product_image: ImageView = containerView.findViewById(R.id.product_image)
-        val product_name: TextView = containerView.findViewById(R.id.product_name)
-        val product_price: TextView = containerView.findViewById(R.id.product_price)
-        val product_description: TextView = containerView.findViewById(R.id.product_description)
+        private val productImage: ImageView = containerView.findViewById(R.id.product_image)
+        private val productName: TextView = containerView.findViewById(R.id.product_name)
+        private val productPrice: TextView = containerView.findViewById(R.id.product_price)
+        private val productDelivery: TextView = containerView.findViewById(R.id.product_delivery)
+        private val rating4: ImageView = containerView.findViewById(R.id.rating4)
+        private val rating5: ImageView = containerView.findViewById(R.id.rating5)
+        private val productRatingCount: TextView = containerView.findViewById(R.id.rating_count)
 
         fun bind(countryData: Product) {
             with(countryData) {
-                product_image.setImageResource(imageId)
-                product_name.text = name
-                product_price.text = itemView.context.getString(R.string.product_price, price)
-                product_description.text = shortDescription
+                productImage.setImageResource(imageId)
+                productName.text = name
+                productPrice.text = price
+                productDelivery.text = delivery
+                if (rating <= 4) rating5.setImageResource(R.drawable.ic_baseline_star_outline_24)
+                if (rating < 4) rating4.setImageResource(R.drawable.ic_baseline_star_half_24)
+                productRatingCount.text = ratingCount
             }
         }
     }
@@ -59,6 +65,6 @@ class DiffCallback : DiffUtil.ItemCallback<Product>() {
     }
 
     override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean {
-        return oldItem == newItem
+        return oldItem.hashCode() == newItem.hashCode()
     }
 }

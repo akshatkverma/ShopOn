@@ -18,37 +18,6 @@
         android:name="hackon.lifetime.shopon.fragments.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
-        <action
-            android:id="@+id/action_detail_to_checkout"
-            app:destination="@id/checkout" />
-        <argument
-            android:name="id"
-            app:argType="integer" />
-    </fragment>
-    <fragment
-        android:id="@+id/checkout"
-        android:name="hackon.lifetime.shopon.fragments.CheckoutFragment"
-        android:label="fragment_checkout"
-        tools:layout="@layout/fragment_checkout">
-        <action
-            android:id="@+id/action_checkout_to_thanks"
-            app:destination="@id/thanks"
-            app:popUpTo="@+id/detail"
-            app:popUpToInclusive="false" />
-        <argument
-            android:name="id"
-            app:argType="integer" />
-    </fragment>
-    <fragment
-        android:id="@+id/thanks"
-        android:name="hackon.lifetime.shopon.fragments.ThanksFragment"
-        android:label="fragment_thanks"
-        tools:layout="@layout/fragment_thanks">
-        <action
-            android:id="@+id/action_thanks_to_home"
-            app:destination="@+id/home"
-            app:popUpTo="@+id/home"
-            app:popUpToInclusive="true" />
         <argument
             android:name="id"
             app:argType="integer" />
