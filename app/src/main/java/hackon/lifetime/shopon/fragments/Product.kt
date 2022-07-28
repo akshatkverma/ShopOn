@@ -9,5 +9,6 @@ data class Product
     val delivery: String,
     val longDescription: String,
     val rating: Float,
-    val ratingCount: String
+    val ratingCount: String,
+    val modelURL: String
 )

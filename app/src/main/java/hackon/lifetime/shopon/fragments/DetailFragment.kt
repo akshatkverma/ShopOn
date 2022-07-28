@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import hackon.lifetime.shopon.R
 import hackon.lifetime.shopon.databinding.FragmentDetailBinding
 import hackon.lifetime.shopon.products
@@ -21,7 +20,7 @@ class DetailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -44,9 +43,21 @@ class DetailFragment : Fragment() {
 
                 binding.virtual.setOnClickListener {
                     val sceneViewerIntent = Intent(Intent.ACTION_VIEW)
-                    sceneViewerIntent.data =
-                        Uri.parse("https://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Avocado/glTF/Avocado.gltf")
-                    sceneViewerIntent.setPackage("com.google.android.googlequicksearchbox")
+                    val intentUri =
+                        Uri.parse("https://arvr.google.com/scene-viewer/1.0").buildUpon()
+                            .appendQueryParameter(
+                                "file",
+                                modelURL
+                            )
+                            .appendQueryParameter("mode", "ar_only")
+                            .appendQueryParameter("resizable", "false")
+                            .appendQueryParameter(
+                                "title",
+                                "$name @ ₹${price}"
+                            )
+                            .build()
+                    sceneViewerIntent.data = intentUri
+                    sceneViewerIntent.setPackage("com.google.ar.core")
                     startActivity(sceneViewerIntent)
                 }
             }
