@@ -9,7 +9,9 @@ We intend to solve these problems by using the _Augmented Reality (AR) Technolog
 
 ## Screenshots of the application :
 
-![Application Screenshots](./doc_assets/screenshots.png)
+![Application Screenshots1](./doc_assets/ScreenShot1.png)
+![Application Screenshots2](./doc_assets/ScreenShot2.png)
+![Application Screenshots3](./doc_assets/ScreenShot3.png)
 
 ## How does it work?
 We will be using **SceneViewer** by triggering a explicit intent to it. 

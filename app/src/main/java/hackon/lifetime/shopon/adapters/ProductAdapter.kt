@@ -1,4 +1,4 @@
-package hackon.lifetime.shopon.fragments
+package hackon.lifetime.shopon.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import hackon.lifetime.shopon.R
+import hackon.lifetime.shopon.models.Product
 
 
 class ProductAdapter(private val listener: (Product) -> Unit) :
@@ -17,7 +18,7 @@ class ProductAdapter(private val listener: (Product) -> Unit) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ProductAdapter.ViewHolder {
+    ): ViewHolder {
         val itemLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item, parent, false)
 

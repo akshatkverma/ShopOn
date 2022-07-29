@@ -9,7 +9,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import hackon.lifetime.shopon.R
-import hackon.lifetime.shopon.products
+import hackon.lifetime.shopon.activities.products
+import hackon.lifetime.shopon.adapters.ProductAdapter
 
 
 class ListFragment : Fragment() {

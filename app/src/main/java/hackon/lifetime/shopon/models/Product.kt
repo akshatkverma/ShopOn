@@ -1,4 +1,4 @@
-package hackon.lifetime.shopon.fragments
+package hackon.lifetime.shopon.models
 
 data class Product
     (

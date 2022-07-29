@@ -1,8 +1,10 @@
-package hackon.lifetime.shopon
+package hackon.lifetime.shopon.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import hackon.lifetime.shopon.fragments.Product
+import androidx.appcompat.app.AppCompatDelegate
+import hackon.lifetime.shopon.R
+import hackon.lifetime.shopon.models.Product
 
 val products = mutableListOf(
     Product(
@@ -13,14 +15,14 @@ val products = mutableListOf(
         "https://firebasestorage.googleapis.com/v0/b/whatschat-1348c.appspot.com/o/chair.glb?alt=media&token=e32cf525-ee71-4490-a38e-0c42f49be3b2"
     ),
     Product(
-        2, "Table", "9,999", R.drawable.table,
+        2, "Canteen Table", "4,500", R.drawable.table,
         "FREE delivery by Thu, 11 Aug",
         "Crafted of Oak wood legs, the sleek veneer top showcases a rick woodgrain finish.",
         4f, "895",
         "https://firebasestorage.googleapis.com/v0/b/whatschat-1348c.appspot.com/o/canteenTable.glb?alt=media&token=c6d913d9-847c-4e4c-8907-51ccf0b56c96"
     ),
     Product(
-        3, "Pedestal Fan", "6,500", R.drawable.pedestal_fan,
+        3, "Pedestal Fan", "3,200", R.drawable.pedestal_fan,
         "FREE delivery by Mon, 8 Aug",
         "Pedestal Fan Wind Storm 18 inch features a powerful energy efficient heavy duty motor, telescopic height adjustment and three-speed control.",
         3.5f, "4,752",
@@ -55,7 +57,7 @@ val products = mutableListOf(
         "https://firebasestorage.googleapis.com/v0/b/aadhar-address-updation.appspot.com/o/park_bench.glb?alt=media&token=8afb7436-7dc2-411e-9b9a-3583c076fc8f"
     ),
     Product(
-        8, "Oven", "10,000", R.drawable.oven_photo,
+        8, "Microwave Oven", "15,000", R.drawable.oven_photo,
         "FREE delivery by Thu, 11 Aug",
         "GRILL, BAKE & TOAST - Use the oven for baking cakes, pizzas and pastas, grilling vegetables, roasting potatoes, chicken, paneer or simply toasting bread.",
         4.5f, "734",
@@ -65,6 +67,7 @@ val products = mutableListOf(
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }

@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import hackon.lifetime.shopon.databinding.FragmentDetailBinding
+import hackon.lifetime.shopon.models.Product
 import hackon.lifetime.shopon.products
 
 
@@ -20,6 +22,7 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         _binding = FragmentDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -52,7 +55,7 @@ class DetailFragment : Fragment() {
                             .appendQueryParameter("resizable", "false")
                             .appendQueryParameter(
                                 "title",
-                                "$name @ ${price}"
+                                "$name @ $price"
                             )
                             .build()
                     sceneViewerIntent.data = intentUri
