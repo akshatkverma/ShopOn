@@ -1,4 +1,4 @@
-package hackon.lifetime.shopon.activities
+package hackon.lifetime.shopon
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

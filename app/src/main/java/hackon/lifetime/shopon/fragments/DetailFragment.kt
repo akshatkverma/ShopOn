@@ -55,7 +55,7 @@ class DetailFragment : Fragment() {
                             .appendQueryParameter("resizable", "false")
                             .appendQueryParameter(
                                 "title",
-                                "$name @ $price"
+                                "$name - ₹$price"
                             )
                             .build()
                     sceneViewerIntent.data = intentUri
