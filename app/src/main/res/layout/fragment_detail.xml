@@ -13,7 +13,7 @@
         android:layout_height="360dp"
         android:contentDescription="@string/product_image"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tv" />
+        app:srcCompat="@drawable/bar_chair" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/virtual"

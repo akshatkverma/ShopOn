@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import hackon.lifetime.shopon.R
 import hackon.lifetime.shopon.databinding.FragmentDetailBinding
 import hackon.lifetime.shopon.products
 
@@ -53,7 +52,7 @@ class DetailFragment : Fragment() {
                             .appendQueryParameter("resizable", "false")
                             .appendQueryParameter(
                                 "title",
-                                "$name @ ₹${price}"
+                                "$name @ ${price}"
                             )
                             .build()
                     sceneViewerIntent.data = intentUri
