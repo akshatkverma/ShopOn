@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
     tools:context=".fragments.DetailFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
 
     <ImageView
         android:id="@+id/product_image"
@@ -25,9 +32,8 @@
         android:text="@string/try_in_your_home"
         android:textColor="@color/black"
         app:iconTint="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/product_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_gravity="center"
+        />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/product_name"
@@ -36,40 +42,40 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/virtual"
         tools:text="Smart TV" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/currency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginTop="6dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_name"
-        android:text="@string/rupee" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_gravity="top"
+                android:text="@string/rupee"
+                />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/product_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toEndOf="@id/currency"
-        app:layout_constraintTop_toBottomOf="@id/product_name"
-        tools:text="65,000" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6dp"
+                tools:text="65,000" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/paise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginTop="6dp"
-        app:layout_constraintStart_toEndOf="@id/product_price"
-        app:layout_constraintTop_toBottomOf="@id/product_name"
-        android:text="@string/_00" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/paise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="@string/_00" />
+
+        </LinearLayout>
+
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/product_details_title"
@@ -78,17 +84,12 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_price"
         android:text="@string/product_details" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/product_full_description"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_details_title"
         tools:text="Watch full hd and 4k movies and series in this latest model." />
 
     <com.google.android.material.textview.MaterialTextView
@@ -98,8 +99,6 @@
         android:textSize="16sp"
         android:textColor="#00695C"
         android:layout_marginBottom="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/add_to_cart"
         android:text="@string/in_stock" />
 
     <com.google.android.material.button.MaterialButton
@@ -111,7 +110,7 @@
         android:backgroundTint="#FFC805"
         android:textColor="@color/black"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@id/buy_now"/>
+        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buy_now"
@@ -121,6 +120,7 @@
         android:text="@string/buy_now"
         android:backgroundTint="#FD8421"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>
