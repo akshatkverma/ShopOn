@@ -51,7 +51,7 @@ The option for virtual try on/ see in your room can be made available for more a
 **Team Name** : Lifetime Error
 
 **Team Members**:
-1. [Akshat Kumar Verma](https://github.com/akshatkverma)
-2. [Mayur Ray](https://github.com/raymayur9)
-3. [Afzal Ansari](https://github.com/Afzal66677)
-4. [Sharad Shaiwal](https://github.com/sharad-0-1)
+1. [Akshat Kumar Verma](https://www.linkedin.com/in/akshatkumarverma/)
+2. [Mayur Ray](https://www.linkedin.com/in/raymayur9/)
+3. [Afzal Ansari](https://www.linkedin.com/in/afzal-ansari-910b38200/)
+4. [Sharad Shaiwal](https://www.linkedin.com/in/sharad-shaiwal-590b89201/)
